@@ -1,48 +1,56 @@
 <script lang="ts">
-  import { currentSock } from "../ts/env/main";
-  import { connectTo } from "../ts/server/main";
-  import InlineLoader from "./InlineLoader.svelte";
+  import logo from "../assets/logo.png";
+  import { loggedIn } from "../ts/env/main";
+  import { getServer, stopSocket } from "../ts/server/main";
+  let username;
+  let password;
 
-  let url: string = "";
-  let thisId: string = "";
-  let connecting = false;
-  let errored = false;
+  async function login() {
+    getServer().emit("login", username, password, (valid: boolean) => {
+      loggedIn.set(valid);
+      console.warn(`Logging in as: ${username} (${valid})`);
+    });
+  }
 
-  currentSock.subscribe((v) => {
-    thisId = v[1];
-  });
+  async function register() {
+    getServer().emit("createUser", username, password, (valid: boolean) => {
+      console.warn(`Creating user: ${username} (${valid})`);
+    });
+  }
 
-  function connect() {
-    connecting = true;
-
-    setTimeout(async () => {
-      errored = await connectTo(url);
-
-      if (errored) {
-        setTimeout(() => {
-          connecting = false;
-          errored = false;
-          url = "";
-        }, 1000);
-      }
-    }, 1000);
+  function leave() {
+    stopSocket();
   }
 </script>
 
-<div class="login">
-  <div class="bg">
-    <div class="ca content">
-      <h3>Login</h3>
-      <p>Enter server URL to connect.</p>
-      <input bind:value={url} disabled={connecting} />
-      <button on:click={connect} disabled={!url || connecting}>Connect</button>
-      {#if connecting}
-        {#if errored}
-          Error!
-        {:else}
-          &nbsp;&nbsp;<InlineLoader inline>Connecting...</InlineLoader>
-        {/if}
-      {/if}
-    </div>
-  </div>
+<div class="login-bg" />
+<div class="ca login">
+  <img src={logo} alt="MultiClick" class="logo" />
+  <h1 class="header">MultiClick</h1>
+  <p>Welcome back! Who are you?</p>
+  <input
+    bind:value={username}
+    class="full"
+    placeholder="Username"
+    maxlength="30"
+  />
+  <input
+    bind:value={password}
+    class="full"
+    placeholder="Password"
+    maxlength="30"
+    type="password"
+  />
+  <button
+    class="full clr-green"
+    disabled={!username || !password}
+    on:click={login}
+  >
+    Continue
+  </button>
+  <button
+    class="full clr-blue"
+    on:click={register}
+    disabled={!username || !password}>Register</button
+  >
 </div>

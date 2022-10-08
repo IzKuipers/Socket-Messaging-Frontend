@@ -5,3 +5,9 @@ input {
   color: inherit;
   border: var(--border-clr) 1px solid;
 }
+
+input.full {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 5px 0;
+}

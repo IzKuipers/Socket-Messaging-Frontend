@@ -3,17 +3,18 @@ import SocketIO, { Socket } from "socket.io-client";
 import { serverListen, undoListeners } from "./listen";
 import { get } from "svelte/store";
 
-export async function connectTo(url: string) {
+export async function connectTo(url: string, callback: (valid) => void) {
   const sock = await SocketIO(url);
 
   sock.on("connect", () => {
     currentSock.set([sock, ""]);
-
+    callback(true);
     serverListen();
   });
 
   sock.on("connect_error", () => {
     stopSocket(sock);
+    callback(false);
   });
 
   return true;

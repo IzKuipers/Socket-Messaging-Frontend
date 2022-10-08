@@ -49,3 +49,66 @@ div.app {
   background-color: var(--bg);
   color: var(--fg);
 }
+
+.clr-red,
+.clr-red * {
+  background-color: var(--clr-red-bg) !important;
+  color: var(--clr-red-fg) !important;
+}
+
+.clr-green,
+.clr-green * {
+  background-color: var(--clr-green-bg) !important;
+  color: var(--clr-green-fg) !important;
+}
+.clr-blue,
+.clr-blue * {
+  background-color: var(--clr-blue-bg) !important;
+  color: var(--clr-blue-fg) !important;
+}
+.clr-orange,
+.clr-orange * {
+  background-color: var(--clr-orange-bg) !important;
+  color: var(--clr-orange-fg) !important;
+}
+.clr-yellow,
+.clr-yellow * {
+  background-color: var(--clr-yellow-bg) !important;
+  color: var(--clr-yellow-fg) !important;
+}
+.clr-aqua,
+.clr-aqua * {
+  background-color: var(--clr-aqua-bg) !important;
+  color: var(--clr-aqua-fg) !important;
+}
+.hover-clr-red:hover,
+.hover-clr-red:hover * {
+  background-color: var(--clr-red-bg) !important;
+  color: var(--clr-red-fg) !important;
+}
+
+.hover-clr-green:hover,
+.hover-clr-green:hover * {
+  background-color: var(--clr-green-bg) !important;
+  color: var(--clr-green-fg) !important;
+}
+.hover-clr-blue:hover,
+.hover-clr-blue:hover * {
+  background-color: var(--clr-blue-bg) !important;
+  color: var(--clr-blue-fg) !important;
+}
+.hover-clr-orange:hover,
+.hover-clr-orange:hover * {
+  background-color: var(--clr-orange-bg) !important;
+  color: var(--clr-orange-fg) !important;
+}
+.hover-clr-yellow:hover,
+.hover-clr-yellow:hover * {
+  background-color: var(--clr-yellow-bg) !important;
+  color: var(--clr-yellow-fg) !important;
+}
+.hover-clr-aqua:hover,
+.hover-clr-aqua:hover * {
+  background-color: var(--clr-aqua-bg) !important;
+  color: var(--clr-aqua-fg) !important;
+}

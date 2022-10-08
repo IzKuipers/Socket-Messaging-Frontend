@@ -1,13 +1,14 @@
 <script lang="ts">
   import "./css/main.css";
-  import Login from "./lib/Login.svelte";
+  import Connect from "./lib/Connect.svelte";
+  import Main from "./lib/Main.svelte";
   import { currentSock } from "./ts/env/main";
 </script>
 
 <div class="app">
   {#if !$currentSock[0]}
-    <Login />
+    <Connect />
   {:else}
-    <h1>Connected.</h1>
+    <Main />
   {/if}
 </div>

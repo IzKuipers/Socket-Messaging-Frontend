@@ -1,15 +1,13 @@
 <script lang="ts">
   import logo from "../assets/logo.png";
   import { loggedIn } from "../ts/env/main";
+  import { login } from "../ts/server/auth";
   import { getServer, stopSocket } from "../ts/server/main";
   let username;
   let password;
 
-  async function login() {
-    getServer().emit("login", username, password, (valid: boolean) => {
-      loggedIn.set(valid);
-      console.warn(`Logging in as: ${username} (${valid})`);
-    });
+  async function doLogin() {
+    login(username, password);
   }
 
   async function register() {
@@ -44,13 +42,9 @@
   <button
     class="full clr-green"
     disabled={!username || !password}
-    on:click={login}
+    on:click={doLogin}
   >
     Continue
   </button>
-  <button
-    class="full clr-blue"
-    on:click={register}
-    disabled={!username || !password}>Register</button
-  >
+  <button class="full clr-orange" on:click={leave}>Leave Server</button>
 </div>

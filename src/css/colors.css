@@ -1,0 +1,51 @@
+@media screen and (prefers-color-scheme: dark) {
+  :root div.app * {
+    --bg: #222;
+    --fg: #ccc;
+    --border-clr: #434343;
+    --clr-red-bg: #452929;
+    --clr-red-fg: #ff7e7e;
+    --clr-green-bg: #283e28;
+    --clr-green-fg: #a8ffa6;
+    --clr-yellow-bg: #49432e;
+    --clr-yellow-fg: #ffe073;
+    --clr-orange-bg: #543d1b;
+    --clr-orange-fg: #ffad32;
+    --clr-blue-bg: #273a48;
+    --clr-blue-fg: #96d3ff;
+    --clr-aqua-fg: #79ffd0;
+    --clr-aqua-bg: #214538;
+    --button-bg: #313131;
+    --button-hover-bg: #414141;
+    --button-active-bg: #262626;
+    --zermelo-appointment-bg: #262626;
+  }
+}
+@media screen and (prefers-color-scheme: light) {
+  :root div.app * {
+    --bg: #fff;
+    --fg: #333;
+    --border-clr: #d1d1d1;
+    --clr-red-bg: #ffc5c5;
+    --clr-red-fg: #c50000;
+    --clr-green-bg: #92ff8f;
+    --clr-green-fg: #299126;
+    --clr-yellow-bg: #ffecaa;
+    --clr-yellow-fg: #a58b2f;
+    --clr-orange-bg: #ffe1b5;
+    --clr-orange-fg: #af7011;
+    --clr-blue-bg: #8fd0ff;
+    --clr-blue-fg: #1566a0;
+    --clr-aqua-bg: #ddfff3;
+    --clr-aqua-fg: #39a17d;
+    --button-bg: #f1f1f1;
+    --button-hover-bg: #e8e8e8;
+    --button-active-bg: #e0e0e0;
+    --zermelo-appointment-bg: var(--button-bg);
+  }
+}
+
+div.app {
+  background-color: var(--bg);
+  color: var(--fg);
+}

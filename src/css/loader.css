@@ -1,0 +1,57 @@
+div.loader:not(.inlined) {
+  text-align: center !important;
+}
+
+div.loader > * {
+  vertical-align: middle;
+  color: inherit;
+  text-align: center;
+}
+
+div.spinner {
+  border: 5px solid transparent;
+  border-top: 5px solid inherit;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+div.loader:not(.inlined) div.spinner {
+  margin: 0 auto !important;
+  margin-bottom: 10px !important;
+}
+
+div.loader.inlined {
+  text-align: left;
+}
+
+div.loader.inlined .spinner {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border: 2.5px solid transparent;
+  border-top: 2.5px solid inherit;
+  margin: 0;
+  margin-right: 5px;
+}
+
+div.loader.inlined p {
+  display: inline-block;
+  margin: 0;
+}
+
+div.loader.inlined > * {
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

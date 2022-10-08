@@ -1,0 +1,8 @@
+*:not(.material-icons) {
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  outline: none !important;
+  user-select: none;
+}

@@ -1,19 +1,13 @@
 <script lang="ts">
   import logo from "../assets/logo.png";
-  import { loggedIn } from "../ts/env/main";
-  import { login } from "../ts/server/auth";
-  import { getServer, stopSocket } from "../ts/server/main";
-  let username;
-  let password;
+  import { stopSocket } from "../ts/server/main";
+  import Existing from "./Login/Existing.svelte";
+  import Register from "./Login/Register.svelte";
 
-  async function doLogin() {
-    login(username, password);
-  }
+  let registering = false;
 
-  async function register() {
-    getServer().emit("createUser", username, password, (valid: boolean) => {
-      console.warn(`Creating user: ${username} (${valid})`);
-    });
+  function toggleRegister() {
+    registering = !registering;
   }
 
   function leave() {
@@ -25,26 +19,13 @@
 <div class="ca login">
   <img src={logo} alt="MultiClick" class="logo" />
   <h1 class="header">MultiClick</h1>
-  <p>Welcome back! Who are you?</p>
-  <input
-    bind:value={username}
-    class="full"
-    placeholder="Username"
-    maxlength="30"
-  />
-  <input
-    bind:value={password}
-    class="full"
-    placeholder="Password"
-    maxlength="30"
-    type="password"
-  />
-  <button
-    class="full clr-green"
-    disabled={!username || !password}
-    on:click={doLogin}
-  >
-    Continue
-  </button>
+  {#if registering}
+    <Register />
+  {:else}
+    <Existing bind:registering />
+  {/if}
   <button class="full clr-orange" on:click={leave}>Leave Server</button>
+  <button class="flat full clr-blue" on:click={toggleRegister}
+    >{registering ? "Have an" : "No"} account?</button
+  >
 </div>

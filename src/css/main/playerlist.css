@@ -1,0 +1,44 @@
+div.playerlist {
+  position: absolute;
+  top: 110px;
+  right: 20px;
+  width: 250px;
+  height: calc(100% - 130px);
+  background-color: #0006;
+  border-radius: 20px;
+  color: var(--fg);
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+div.playerlist h1.header {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+div.playerlist div.player {
+  border-top: #0003 2px solid;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+div.playerlist div.player p.name {
+  margin: 0;
+  font-weight: 800;
+}
+
+div.playerlist div.player p.score {
+  margin: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.5;
+}
+
+div.playerlist p.no-players {
+  text-align: center;
+  opacity: 0.5;
+  font-style: italic;
+}

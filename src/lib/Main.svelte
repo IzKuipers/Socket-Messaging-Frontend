@@ -5,7 +5,9 @@
 </script>
 
 {#if $loggedIn}
+<div class="main-bg">
   <Game />
+  </div>
 {:else}
   <Login />
 {/if}

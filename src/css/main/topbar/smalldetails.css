@@ -1,0 +1,24 @@
+div.smalldetails {
+  border-radius: 10px;
+  background-color: #0004;
+  box-sizing: border-box;
+  padding: 10px;
+  display: inline-block;
+}
+
+div.smalldetails div.detail span.material-icons {
+  background-color: transparent !important;
+  font-size: 19px;
+  margin-right: 5px;
+}
+
+div.smalldetails div.detail {
+  padding: 0;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+div.smalldetails div.detail + div.detail {
+  border-left: #fff3 1px solid;
+  padding-left: 7.5px;
+}

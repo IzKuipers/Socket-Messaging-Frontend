@@ -14,6 +14,7 @@ export const ListenStore: { [key: string]: (...args: any[]) => any } = {
     Clients.set(c);
   },
   "player-presence": (p: Player[]) => {
+    console.log(`Player presence: ${p.length} players online`, p);
     presentPlayers.set(p);
   },
 };

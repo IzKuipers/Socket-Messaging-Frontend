@@ -1,0 +1,63 @@
+@import url("./topbar.css");
+@import url("./playerlist.css");
+@import url("./detailspane.css");
+
+div.main-bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(218deg, #1e1d5f, #63200f);
+  background-size: 400% 400%;
+
+  -webkit-animation: bg-ani 15s ease infinite;
+  -moz-animation: bg-ani 15s ease infinite;
+  -o-animation: bg-ani 15s ease infinite;
+  animation: bg-ani 15s ease infinite;
+}
+
+@-webkit-keyframes bg-ani {
+  0% {
+    background-position: 79% 0%;
+  }
+  50% {
+    background-position: 22% 100%;
+  }
+  100% {
+    background-position: 79% 0%;
+  }
+}
+@-moz-keyframes bg-ani {
+  0% {
+    background-position: 79% 0%;
+  }
+  50% {
+    background-position: 22% 100%;
+  }
+  100% {
+    background-position: 79% 0%;
+  }
+}
+@-o-keyframes bg-ani {
+  0% {
+    background-position: 79% 0%;
+  }
+  50% {
+    background-position: 22% 100%;
+  }
+  100% {
+    background-position: 79% 0%;
+  }
+}
+@keyframes bg-ani {
+  0% {
+    background-position: 79% 0%;
+  }
+  50% {
+    background-position: 22% 100%;
+  }
+  100% {
+    background-position: 79% 0%;
+  }
+}

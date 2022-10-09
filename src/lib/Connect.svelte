@@ -1,7 +1,7 @@
 <script lang="ts">
   import logo from "../assets/logo.png";
+  import { dialogData, loggedIn } from "../ts/env/main";
   import { connectTo } from "../ts/server/main";
-  import InlineLoader from "./InlineLoader.svelte";
   import Loader from "./Loader.svelte";
   let host: string;
   let connecting = false;
@@ -17,7 +17,19 @@
   }
 
   function error() {
-    alert("Connection failed");
+    dialogData.set({
+      title: "Server Error",
+      message: !$loggedIn
+        ? `Unable to connect to server ${host}.<br/><br/>Please check the hostname for any errors, then try again.`
+        : `The connection with server ${host} got interrupted.<br/><br/>You're disconnected.`,
+      buttons: [
+        {
+          capt: "Close",
+          icon: "",
+          action: () => {},
+        },
+      ],
+    });
   }
 </script>
 

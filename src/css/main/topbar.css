@@ -1,0 +1,42 @@
+@import url("./topbar/smalldetails.css");
+@import url("./topbar/usermenu.css");
+
+div.topbar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 70px;
+  background-color: #0001;
+  backdrop-filter: blur(30px);
+  box-sizing: border-box;
+  color: var(--fg);
+  padding: 20px;
+  border-radius: 20px;
+  border: #0002 1px solid;
+}
+
+div.topbar h1.header {
+  margin: 0;
+  font-weight: 100;
+  font-size: 24px;
+  display: inline-block;
+}
+
+div.topbar * {
+  vertical-align: middle;
+}
+
+div.topbar h1.header img.logo {
+  height: 40px;
+  margin-right: 15px;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+div.topbar div.right {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 40px;
+}
